@@ -173,6 +173,10 @@
       lastPhysicsTimestamp = timestamp;
 
       // Burn fuel
+      if(landerVelocity >= 44.37) {
+          console.log("AI taking control!");
+          landerEnginesOn = true;
+      }
       if(paused || (landerFuel <= 0)) landerEnginesOn = false;
       if(landerEnginesOn) landerFuel -= (landerFuelBurnRate * timePassed);
 
